@@ -1,4 +1,4 @@
-package br.com.tofoli.api.infra;
+package br.com.tofoli.api.infra.exception;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.ResponseEntity;
