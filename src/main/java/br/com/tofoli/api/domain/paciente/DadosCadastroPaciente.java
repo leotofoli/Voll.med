@@ -1,6 +1,6 @@
-package br.com.tofoli.api.paciente;
+package br.com.tofoli.api.domain.paciente;
 
-import br.com.tofoli.api.endereco.DadosEndereco;
+import br.com.tofoli.api.domain.endereco.DadosEndereco;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 

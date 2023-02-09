@@ -1,6 +1,6 @@
-package br.com.tofoli.api.paciente;
+package br.com.tofoli.api.domain.paciente;
 
-import br.com.tofoli.api.endereco.DadosEndereco;
+import br.com.tofoli.api.domain.endereco.DadosEndereco;
 import jakarta.validation.constraints.NotNull;
 
 public record DadosAtualizacaoPaciente(@NotNull Long id, String nome, String telefone, DadosEndereco endereco) {

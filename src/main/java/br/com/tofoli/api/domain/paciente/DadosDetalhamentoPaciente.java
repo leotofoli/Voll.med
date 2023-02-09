@@ -1,6 +1,6 @@
-package br.com.tofoli.api.paciente;
+package br.com.tofoli.api.domain.paciente;
 
-import br.com.tofoli.api.endereco.Endereco;
+import br.com.tofoli.api.domain.endereco.Endereco;
 
 public record DadosDetalhamentoPaciente(Long id, String nome, String email, String telefone, String cpf,
 		Endereco endereco) {

@@ -1,4 +1,4 @@
-package br.com.tofoli.api.medico;
+package br.com.tofoli.api.domain.medico;
 
 public record DadosListagemMedico(Long id, String nome, String email, String crm, Especialidade especialidade) {
 

@@ -1,4 +1,4 @@
-package br.com.tofoli.api.medico;
+package br.com.tofoli.api.domain.medico;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

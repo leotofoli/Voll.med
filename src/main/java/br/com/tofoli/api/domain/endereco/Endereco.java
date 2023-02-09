@@ -1,4 +1,4 @@
-package br.com.tofoli.api.endereco;
+package br.com.tofoli.api.domain.endereco;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;

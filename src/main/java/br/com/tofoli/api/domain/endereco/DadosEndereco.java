@@ -1,4 +1,4 @@
-package br.com.tofoli.api.endereco;
+package br.com.tofoli.api.domain.endereco;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

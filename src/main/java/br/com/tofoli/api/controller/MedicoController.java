@@ -16,12 +16,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import br.com.tofoli.api.medico.DadosAtualizacaoMedico;
-import br.com.tofoli.api.medico.DadosCadastroMedico;
-import br.com.tofoli.api.medico.DadosDetalhamentoMedico;
-import br.com.tofoli.api.medico.DadosListagemMedico;
-import br.com.tofoli.api.medico.Medico;
-import br.com.tofoli.api.medico.MedicoRepository;
+import br.com.tofoli.api.domain.medico.DadosAtualizacaoMedico;
+import br.com.tofoli.api.domain.medico.DadosCadastroMedico;
+import br.com.tofoli.api.domain.medico.DadosDetalhamentoMedico;
+import br.com.tofoli.api.domain.medico.DadosListagemMedico;
+import br.com.tofoli.api.domain.medico.Medico;
+import br.com.tofoli.api.domain.medico.MedicoRepository;
 import jakarta.validation.Valid;
 
 @RestController

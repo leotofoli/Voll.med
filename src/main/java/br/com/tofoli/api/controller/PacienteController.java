@@ -14,16 +14,14 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.util.UriBuilder;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import br.com.tofoli.api.medico.DadosAtualizacaoMedico;
-import br.com.tofoli.api.paciente.DadosAtualizacaoPaciente;
-import br.com.tofoli.api.paciente.DadosCadastroPaciente;
-import br.com.tofoli.api.paciente.DadosDetalhamentoPaciente;
-import br.com.tofoli.api.paciente.DadosListagemPaciente;
-import br.com.tofoli.api.paciente.Paciente;
-import br.com.tofoli.api.paciente.PacienteRepository;
+import br.com.tofoli.api.domain.paciente.DadosAtualizacaoPaciente;
+import br.com.tofoli.api.domain.paciente.DadosCadastroPaciente;
+import br.com.tofoli.api.domain.paciente.DadosDetalhamentoPaciente;
+import br.com.tofoli.api.domain.paciente.DadosListagemPaciente;
+import br.com.tofoli.api.domain.paciente.Paciente;
+import br.com.tofoli.api.domain.paciente.PacienteRepository;
 import jakarta.validation.Valid;
 
 @RestController
