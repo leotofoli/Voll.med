@@ -1,5 +1,8 @@
 package br.com.tofoli.api.controller;
 
+import br.com.tofoli.api.domain.usuario.Usuario;
+import br.com.tofoli.api.infra.security.DadosTokenJWT;
+import br.com.tofoli.api.infra.security.TokenService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,10 +18,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class AutenticacaoController {
     @Autowired
     private AuthenticationManager maneger;
+    @Autowired
+    private TokenService tokenService;
     @PostMapping
     public ResponseEntity efetuarLogin(@RequestBody @Valid DadosAutenticacao dados){
-        var token = new UsernamePasswordAuthenticationToken(dados.login(), dados.senha());
-       var authentication =  maneger.authenticate(token);
-       return ResponseEntity.ok().build();
+        var authToken = new UsernamePasswordAuthenticationToken(dados.login(), dados.senha());
+       var authentication =  maneger.authenticate(authToken);
+       var tokenJWT = tokenService.gerarToken((Usuario) authentication.getPrincipal());
+       return ResponseEntity.ok(new DadosTokenJWT(tokenJWT));
     }
 }
