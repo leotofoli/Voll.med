@@ -16,46 +16,47 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(of = "id")
 public class Medico {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	private String nome;
-	private String email;
-	private String telefone;
-	private String crm;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String nome;
+    private String email;
 
-	@Enumerated(EnumType.STRING)
-	private Especialidade especialidade;
+    private String telefone;
 
-	@Embedded
-	private Endereco endereco;
+    private String crm;
 
-	private Boolean ativo;
+    @Enumerated(EnumType.STRING)
+    private Especialidade especialidade;
 
-	public Medico(DadosCadastroMedico dados) {
-		this.nome = dados.nome();
-		this.email = dados.email();
-		this.telefone = dados.telefone();
-		this.crm = dados.crm();
-		this.especialidade = dados.especialidade();
-		this.endereco = new Endereco(dados.endereco());
-		this.ativo = true;
-	}
+    @Embedded
+    private Endereco endereco;
 
-	public void atualizarInformacoes(@Valid DadosAtualizacaoMedico dados) {
-		if (dados.nome() != null)
-			this.nome = dados.nome();
+    private Boolean ativo;
 
-		if (dados.telefone() != null)
-			this.telefone = dados.telefone();
+    public Medico(DadosCadastroMedico dados) {
+        this.ativo = true;
+        this.nome = dados.nome();
+        this.email = dados.email();
+        this.telefone = dados.telefone();
+        this.crm = dados.crm();
+        this.especialidade = dados.especialidade();
+        this.endereco = new Endereco(dados.endereco());
+    }
 
-		if (dados.endereco() != null)
-			this.endereco.atualizarInformacoes(dados.endereco());
+    public void atualizarInformacoes(DadosAtualizacaoMedico dados) {
+        if (dados.nome() != null) {
+            this.nome = dados.nome();
+        }
+        if (dados.telefone() != null) {
+            this.telefone = dados.telefone();
+        }
+        if (dados.endereco() != null) {
+            this.endereco.atualizarInformacoes(dados.endereco());
+        }
 
-	}
+    }
 
-	public void excluir() {
-		this.ativo = false;
-
-	}
+    public void excluir() {
+        this.ativo = false;
+    }
 }

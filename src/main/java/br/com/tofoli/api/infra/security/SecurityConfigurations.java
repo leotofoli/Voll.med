@@ -17,6 +17,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 @EnableWebSecurity
 public class SecurityConfigurations {
+
     @Autowired
     private SecurityFilter securityFilter;
 
@@ -26,8 +27,6 @@ public class SecurityConfigurations {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and().authorizeHttpRequests()
                 .requestMatchers(HttpMethod.POST, "/login").permitAll()
-                .requestMatchers(HttpMethod.DELETE, "/medicos").hasRole("ADMIN")
-                .requestMatchers(HttpMethod.DELETE, "/pacientes").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and().addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
@@ -39,7 +38,9 @@ public class SecurityConfigurations {
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
+
 }
