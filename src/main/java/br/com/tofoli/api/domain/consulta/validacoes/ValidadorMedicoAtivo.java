@@ -4,8 +4,10 @@ import br.com.tofoli.api.domain.ValidacaoException;
 import br.com.tofoli.api.domain.consulta.DadosAgendamentoConsulta;
 import br.com.tofoli.api.domain.medico.MedicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-public class ValidarMedicoAtivo {
+@Component
+public class ValidadorMedicoAtivo implements ValidadorAgendamentoDeConsulta {
 
     @Autowired
     private MedicoRepository repository;

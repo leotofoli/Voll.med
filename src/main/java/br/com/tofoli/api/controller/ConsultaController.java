@@ -3,6 +3,7 @@ package br.com.tofoli.api.controller;
 import br.com.tofoli.api.domain.consulta.AgendaDeConsultas;
 import br.com.tofoli.api.domain.consulta.DadosAgendamentoConsulta;
 import br.com.tofoli.api.domain.consulta.DadosDetalheConsulta;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("consultas")
+@SecurityRequirement(name="bearer-key")
 public class ConsultaController {
 
     @Autowired
@@ -22,7 +24,7 @@ public class ConsultaController {
     @PostMapping
     @Transactional
     public ResponseEntity agendar(@RequestBody @Valid DadosAgendamentoConsulta dados){
-        agenda.agendar(dados);
-        return ResponseEntity.ok(new DadosDetalheConsulta(null, null, null, null));
+        var dto = agenda.agendar(dados);
+        return ResponseEntity.ok(dto);
     }
 }
