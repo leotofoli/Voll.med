@@ -1,4 +1,4 @@
-package br.com.tofoli.api.domain.consulta.validacoes;
+package br.com.tofoli.api.domain.consulta.validacoes.agendamento;
 
 import br.com.tofoli.api.domain.ValidacaoException;
 import br.com.tofoli.api.domain.consulta.ConsultaRepository;

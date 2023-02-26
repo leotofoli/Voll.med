@@ -2,7 +2,6 @@ package br.com.tofoli.api.controller;
 
 import br.com.tofoli.api.domain.consulta.AgendaDeConsultas;
 import br.com.tofoli.api.domain.consulta.DadosAgendamentoConsulta;
-import br.com.tofoli.api.domain.consulta.DadosDetalheConsulta;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
